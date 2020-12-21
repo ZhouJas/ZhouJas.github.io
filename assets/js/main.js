@@ -394,17 +394,14 @@
 		textInterval: 3000
 	});
 
-	window.onload = function() {
-		Particles.init({
+
+	// Initialize.
+		var particles = Particles.init({
 			selector: '.background',
 			maxParticles: 75,
 			color: ["FFD700", "888888"],
-			sizeVariations: 2,
 			connectParticles: true
 		});
-	  };
-	// Initialize.
-
 	// Hide main, articles.
 	$main.hide();
 	$main_articles.hide();
