@@ -1502,17 +1502,17 @@ input, select, textarea {
 		}
 
 /* Main */
-.selectedText {
-	display: none;
+	.selectedText {
+		display: none;	
 	}
 
-.background {
-	position: fixed;
-	display: block;
-	top: 0;
-	left: 0;
-	z-index: 2;
-}
+	.background {
+		position: fixed;
+		display: block;
+		top: 0;
+		left: 0;
+		z-index: 2;
+	}
 
 	#main {
 		-moz-flex-grow: 1;
