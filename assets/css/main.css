@@ -1505,7 +1505,15 @@ input, select, textarea {
 .selectedText {
 	display: none;
 	}
-	
+
+.background {
+	position: fixed;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
 	#main {
 		-moz-flex-grow: 1;
 		-webkit-flex-grow: 1;
