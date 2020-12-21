@@ -1507,8 +1507,9 @@ input, select, textarea {
 	}
 
 	.background {
-		position: fixed;
+		position: absolute;
 		display: block;
+		width: 100vmax !important;
 		top: 0;
 		left: 0;
 		z-index: 2;
