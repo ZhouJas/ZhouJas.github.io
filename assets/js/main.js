@@ -399,8 +399,16 @@
 		var particles = Particles.init({
 			selector: '.background',
 			maxParticles: 75,
-			color: ["FFD700", "888888"],
-			connectParticles: true
+			color: ['#00C9B1','#FFD700', '#888888'],
+			connectParticles: true,
+			responsive: [{
+				breakpoint: 800,
+			  options: {
+				  color: '#00C9B1',
+				  maxParticles: 50,
+				connectParticles: false
+			  }
+			}]
 		});
 	// Hide main, articles.
 	$main.hide();
