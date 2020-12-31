@@ -37,6 +37,10 @@ ol, ul {
 	list-style: none;
 }
 
+a:hover {
+    color: inherit;
+}
+
 blockquote, q {
 	quotes: none;
 }
@@ -1505,6 +1509,13 @@ input, select, textarea {
 	.selectedText {
 		display: none;	
 	}
+
+	.progress {
+		margin-bottom: 1rem;
+		width: 80%;
+		height: 5px;
+		position: relative;
+	  }
 
 	.background {
 		position: absolute;

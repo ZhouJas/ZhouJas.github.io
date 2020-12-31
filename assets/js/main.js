@@ -79,7 +79,7 @@
 			return;
 
 		// Handle lock.
-
+		progressAnimate();
 		// Already locked? Speed through "show" steps w/o delays.
 		if (locked || (typeof initial != 'undefined' && initial === true)) {
 
@@ -202,8 +202,9 @@
 		var $article = $main_articles.filter('.active');
 
 		// Article not visible? Bail.
-		if (!$body.hasClass('is-article-visible'))
+		if (!$body.hasClass('is-article-visible')) {
 			return;
+		}
 
 		// Add state?
 		if (typeof addState != 'undefined'
@@ -280,7 +281,7 @@
 				}, delay);
 
 			}, 25);
-
+			progressDestroy();
 		}, delay);
 
 
@@ -309,8 +310,9 @@
 	$body.on('click', function (event) {
 
 		// Article visible? Hide.
-		if ($body.hasClass('is-article-visible'))
+		if ($body.hasClass('is-article-visible')) {
 			$main._hide(true);
+		}
 
 	});
 
@@ -394,6 +396,33 @@
 		textInterval: 3000
 	});
 
+	//Progress bars
+	var progressBars = [];
+	function progressAnimate (){
+		$('.progress').each(function() {
+			var bar = new ProgressBar.Line(this, {
+				strokeWidth: 6,
+				easing: 'easeInOut',
+				duration: 1400,
+				color: '#539bb5',
+				trailColor: '#d3d3d3',
+				trailWidth: 6,
+				svgStyle: {width: '100%', height: '100%'}
+			});
+			var percentage = ($(this).attr('percentage')/100);
+			bar.animate(percentage);
+			progressBars.push(bar);
+		});
+	}
+
+	function progressDestroy() {
+		if (progressBars) {
+			progressBars.forEach(element => {
+				element.destroy();	
+			});
+			progressBars=[];
+		}
+	}
 
 	// Initialize.
 		var particles = Particles.init({
